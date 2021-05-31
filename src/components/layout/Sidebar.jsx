@@ -2,8 +2,8 @@ import React from 'react';
 import {
   FaChevronDown,
   FaInbox,
-  FaRegCalendarAlt,
-  FaRegCalendar,
+  FaCalendarWeek,
+  FaCalendarDay,
 } from 'react-icons/fa';
 
 export const Sidebar = () => (
@@ -17,13 +17,13 @@ export const Sidebar = () => (
       </li>
       <li>
         <span>
-          <FaRegCalendar />
+          <FaCalendarDay />
         </span>
         <span>Today</span>
       </li>
       <li>
         <span>
-          <FaRegCalendarAlt />
+          <FaCalendarWeek />
         </span>
         <span>Next 7 days</span>
       </li>

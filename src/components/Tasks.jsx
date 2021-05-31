@@ -5,6 +5,7 @@ import { useTasks } from '../hooks/index';
 export const Tasks = () => {
   const projectId = '1';
   const { tasks } = useTasks(projectId);
+  console.log('tasks', tasks);
   const projectName = 'Project #';
   return (
     <div className="tasks" data-testid="tasks">
