@@ -9,23 +9,29 @@ import {
 export const Sidebar = () => (
   <div className="sidebar" data-testid="sidebar">
     <ul className="sidebar__generic">
-      <li>
-        <span>
-          <FaInbox />
-        </span>
-        <span>Inbox</span>
+      <li className="inbox" data-testid="inbox">
+        <div>
+          <span>
+            <FaInbox />
+          </span>
+          <span>Inbox</span>
+        </div>
       </li>
-      <li>
-        <span>
-          <FaCalendarDay />
-        </span>
-        <span>Today</span>
+      <li className="today" data-testid="today">
+        <div>
+          <span>
+            <FaCalendarDay />
+          </span>
+          <span>Today</span>
+        </div>
       </li>
-      <li>
-        <span>
-          <FaCalendarWeek />
-        </span>
-        <span>Next 7 days</span>
+      <li className="next_7" data-testid="next_7">
+        <div>
+          <span>
+            <FaCalendarWeek />
+          </span>
+          <span>Next 7 days</span>
+        </div>
       </li>
     </ul>
 
