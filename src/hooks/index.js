@@ -24,12 +24,12 @@ export const useTasks = (selectedProject) => {
       unsubscribe = unsubscribe.where('projectId', '==', selectedProject);
     } else if (selectedProject === 'TODAY') {
       unsubscribe = unsubscribe.where(
-        'data',
+        'date',
         '==',
         moment().format('DD/MM/YYYY'),
       );
     } else if (selectedProject === 'INBOX' || selectedProject === 0) {
-      unsubscribe = unsubscribe.where('data', '==', '');
+      unsubscribe = unsubscribe.where('date', '==', '');
     }
 
     unsubscribe = unsubscribe.onSnapshot((snapshot) => {
