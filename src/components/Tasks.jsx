@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Checkbox } from './Checkbox';
 import { useTasks } from '../hooks/index';
+import { COLLATED_TASKS } from '../constants';
+import { getTitle, getCollatedTitle, collatedTasksExist } from '../helpers';
+import { useSelectedProjectValue, useProjectsValue } from '../context';
 
 export const Tasks = () => {
-  const projectId = '1';
-  const { tasks } = useTasks(projectId);
-  const projectName = 'Project #';
+  const { selectedProject } = useSelectedProjectValue();
+  const { projects } = useProjectsValue();
+  const { tasks } = useTasks(selectedProject);
+
+  let projectName = '';
+
+  if (projects && selectedProject && !collatedTasksExist(selectedProject)) {
+    projectName = getTitle(projects, selectedProject).name;
+  }
+
+  if (collatedTasksExist(selectedProject) && selectedProject) {
+    projectName = getCollatedTitle(COLLATED_TASKS, selectedProject).name;
+  }
+
+  useEffect(() => {
+    document.title = `${projectName}: Todoist`;
+  });
+
   return (
     <div className="tasks" data-testid="tasks">
       <h2 data-testid="project-name">{projectName}</h2>
