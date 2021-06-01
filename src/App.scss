@@ -267,19 +267,6 @@ header {
   &__project {
     cursor: pointer;
 
-    div:nth-child(1) {
-      padding: 5px 0;
-      padding-left: 10px;
-      padding-right: 15px;
-      width: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-    }
-
     &-delete {
       margin-left: auto;
       display: none;
@@ -417,6 +404,39 @@ header {
         font-weight: bold;
         background-color: white;
       }
+    }
+  }
+}
+
+/*
+  Project delete modal
+*/
+.project-delete-modal {
+  position: relative;
+
+  &__inner {
+    @include box-overlay();
+    z-index: 99;
+    min-width: 200px;
+    padding: 10px;
+    top: 25px;
+    right: 0;
+    background-color: white;
+
+    p {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      line-height: normal;
+      font-weight: normal;
+      font-size: 15px;
+    }
+
+    button {
+      @include btn('50px');
+    }
+    span {
+      @include cancel();
+      font-weight: normal;
     }
   }
 }
