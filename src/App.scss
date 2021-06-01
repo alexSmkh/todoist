@@ -308,7 +308,7 @@ header {
   }
 
   &__projects {
-    padding-left: 3px;
+    padding-left: 15px;
   }
 
   &__project {
@@ -323,11 +323,12 @@ header {
   &__middle {
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-bottom: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     border-bottom: $generic-border;
-    padding-left: 50px;
+    padding-left: 10px;
     cursor: pointer;
     align-items: center;
 
@@ -357,6 +358,8 @@ header {
   }
 
   &__generic {
+    padding-left: 0;
+
     li {
       list-style-type: none;
       color: #333;
