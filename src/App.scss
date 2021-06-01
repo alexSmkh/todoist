@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
+  -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
 
@@ -22,6 +24,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
 /*
   Variables
 */
@@ -36,6 +42,7 @@ $generic-bg: #db4c3f;
 */
 
 @mixin box-overlay() {
+  -webkit-box-shadow: $generic-box-shadow;
   box-shadow: $generic-box-shadow;
   position: absolute;
   width: 100%;
@@ -45,12 +52,20 @@ $generic-bg: #db4c3f;
 }
 
 @mixin va($va-align: center) {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 
   @if $va-align != center {
+    -webkit-box-pack: left;
+    -ms-flex-pack: left;
     justify-content: left;
   } @else {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 }
@@ -309,6 +324,7 @@ header {
 
   &__projects {
     padding-left: 15px;
+    padding-right: 15px;
   }
 
   &__project {
