@@ -68,9 +68,12 @@ export const Sidebar = () => {
         </li>
       </ul>
 
-      <div className="sidebar__middle">
+      <div
+        className="sidebar__middle"
+        onClink={() => setShowProjects(!showProjects)}
+      >
         <span>
-          <FaChevronDown />
+          <FaChevronDown className={!showProjects ? 'hidden-project' : ''} />
         </span>
         <h2>Projects</h2>
       </div>

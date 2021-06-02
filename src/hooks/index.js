@@ -1,6 +1,7 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-nested-ternary */
 import { useState, useEffect } from 'react';
+import _ from 'lodash';
 import moment from 'moment';
 import { firebase } from '../firebase';
 import { USER_ID } from '../constants/index';
@@ -73,7 +74,7 @@ export const useProjects = () => {
           docId: project.id,
         }));
 
-        if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
+        if (!_.isEqual(allProjects, projects)) {
           setProjects(allProjects);
         }
       });
