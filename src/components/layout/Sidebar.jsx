@@ -70,7 +70,7 @@ export const Sidebar = () => {
 
       <div
         className="sidebar__middle"
-        onClink={() => setShowProjects(!showProjects)}
+        onClik={() => setShowProjects(!showProjects)}
       >
         <span>
           <FaChevronDown className={!showProjects ? 'hidden-project' : ''} />
