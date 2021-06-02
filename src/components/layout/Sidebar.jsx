@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-unused-vars */
@@ -70,7 +71,7 @@ export const Sidebar = () => {
 
       <div
         className="sidebar__middle"
-        onClik={() => setShowProjects(!showProjects)}
+        onClick={() => setShowProjects(!showProjects)}
       >
         <span>
           <FaChevronDown className={!showProjects ? 'hidden-project' : ''} />

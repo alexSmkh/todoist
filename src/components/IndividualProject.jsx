@@ -17,9 +17,10 @@ export const IndividualProject = ({ project }) => {
       .firestore()
       .collection('projects')
       .doc(docId)
-      .delete(() => {
-        setProjects([...projects]);
+      .delete()
+      .then(() => {
         setSelectedProject(DEFAULT_SELECTED_PROJECT);
+        setProjects([...projects]);
       });
   };
 
@@ -28,7 +29,7 @@ export const IndividualProject = ({ project }) => {
       <span className="sidebar__dot">•</span>
       <span className="sidebar__project-name">{project.name}</span>
       <span
-        className="sidebar__project-delete"
+        className={`sidebar__project-delete ${showConfirm ? 'active' : ''}`}
         data-testid="delete-project"
         onClick={() => setShowConfirm(!showConfirm)}
       >

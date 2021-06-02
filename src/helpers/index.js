@@ -4,8 +4,9 @@ export const collatedTasksExist = (selectedProject) => COLLATED_TASKS
   .find(({ projectId }) => projectId === selectedProject);
 
 export const getTitle = (projectId, projects = []) => {
-  const { name } = [...COLLATED_TASKS, ...projects].find(
+  const currentProject = [...COLLATED_TASKS, ...projects].find(
     (project) => project.projectId === projectId,
   );
-  return name;
+  if (currentProject) return currentProject.name;
+  return '';
 };
