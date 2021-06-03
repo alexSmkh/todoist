@@ -30,6 +30,7 @@ export const Projects = ({ activeValue = null }) => {
           tabIndex={0}
           onClick={() => clickHandler(project.projectId)}
           onKeyDown={() => clickHandler(project.projectId)}
+          aria-label={`Select ${project.name} as the task project`}
         >
           <IndividualProject project={project} />
         </div>

@@ -75,29 +75,28 @@ export const AddTask = ({
       {(showMain || showQuickAddTask) && (
         <div className="add-task__main" data-testid="add-task-main">
           {showQuickAddTask && (
-            <>
-              <div data-testid="quick-add-task">
-                <h2 className="header">Quick Add Task</h2>
-                <span
-                  className="add-task__cancel-x"
-                  data-testid="add-task-quick-cancel"
-                  onClick={() => {
-                    setShowMain(false);
-                    setShowProjectOverlay(false);
-                    setShowQuickAddTask(false);
-                  }}
-                  onKeyPress={() => {
-                    setShowMain(false);
-                    setShowProjectOverlay(false);
-                    setShowQuickAddTask(false);
-                  }}
-                  tabIndex={0}
-                  role="button"
-                >
-                  x
-                </span>
-              </div>
-            </>
+            <div data-testid="quick-add-task">
+              <h2 className="header">Quick Add Task</h2>
+              <span
+                className="add-task__cancel-x"
+                data-testid="add-task-quick-cancel"
+                onClick={() => {
+                  setShowMain(false);
+                  setShowProjectOverlay(false);
+                  setShowQuickAddTask(false);
+                }}
+                onKeyPress={() => {
+                  setShowMain(false);
+                  setShowProjectOverlay(false);
+                  setShowQuickAddTask(false);
+                }}
+                tabIndex={0}
+                role="button"
+                aria-label="Quick Add Task"
+              >
+                x
+              </span>
+            </div>
           )}
           <ProjectOverlay
             setProject={setProject}
@@ -115,6 +114,7 @@ export const AddTask = ({
             type="text"
             value={task}
             onChange={(e) => setTask(e.target.value)}
+            aria-label="Enter your task"
           />
           <button
             type="button"
@@ -144,6 +144,7 @@ export const AddTask = ({
               }}
               tabIndex={0}
               role="button"
+              aria-label="Cancel adding a task"
             >
               Cancel
             </span>
@@ -155,6 +156,7 @@ export const AddTask = ({
             onKeyDown={() => setShowProjectOverlay(!showProjectOverlay)}
             tabIndex={0}
             role="button"
+            aria-label="Show projects overlay"
           >
             <FaRegListAlt />
           </span>

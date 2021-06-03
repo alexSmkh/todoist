@@ -353,7 +353,6 @@ header {
     display: -ms-flexbox;
     display: flex;
     border-bottom: $generic-border;
-    padding-left: 10px;
     cursor: pointer;
     align-items: center;
 
@@ -430,11 +429,13 @@ header {
 /*
   Project delete modal
 */
+
 .project-delete-modal {
   position: relative;
 
   &__inner {
     @include box-overlay();
+    display: block !important;
     z-index: 99;
     min-width: 200px;
     padding: 10px;
@@ -463,8 +464,7 @@ header {
 /*
   Main content
 */
-/* Main Content
-  ============================================ */
+
 .content {
   display: grid;
   -webkit-box-align: center;
@@ -475,8 +475,10 @@ header {
   margin: auto;
 }
 
-/* Tasks
-  ============================================ */
+/*
+  Tasks
+*/
+
 .tasks {
   width: 656px;
   background-color: white;

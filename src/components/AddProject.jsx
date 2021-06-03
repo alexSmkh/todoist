@@ -55,6 +55,7 @@ export const AddProject = ({ shouldShow = false }) => {
             onKeyDown={() => setShow(false)}
             role="button"
             tabIndex={0}
+            aria-label="Cancel adding project"
           >
             Cancel
           </span>
