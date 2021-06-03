@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import { FaPizzaSlice } from 'react-icons/fa';
 import { AddTask } from '../AddTask';
@@ -16,22 +14,32 @@ export const Header = ({ darkmode, setDarkMode }) => {
         </div>
         <div className="settings">
           <ul>
-            <li
-              className="settings__add"
-              data-testid="quick-add-task-action"
-              onClick={() => {
-                setShowQuickAddTask(true);
-                setShouldShowMain(true);
-              }}
-            >
-              +
+            <li className="settings__add" data-testid="quick-add-task-action">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowQuickAddTask(true);
+                  setShouldShowMain(true);
+                }}
+                onKeyDown={() => {
+                  setShowQuickAddTask(true);
+                  setShouldShowMain(true);
+                }}
+              >
+                +
+              </button>
             </li>
             <li
               className="settings__darkmode"
               data-testid="dark-mode-action"
-              onClick={() => setDarkMode(!darkmode)}
             >
-              <FaPizzaSlice />
+              <button
+                type="button"
+                onClick={() => setDarkMode(!darkmode)}
+                onKeyDown={() => setDarkMode(!darkmode)}
+              >
+                <FaPizzaSlice />
+              </button>
             </li>
           </ul>
         </div>

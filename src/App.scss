@@ -36,7 +36,7 @@ $generic-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px,
   rgba(0, 0, 0, 0.1) 0px 4px 11px;
 $generic-border: 1px solid #f1f1f1;
 $generic-bg: #db4c3f;
-
+$hover-bcg-item: #f4f4f4;
 /*
   Mixins
 */
@@ -127,7 +127,7 @@ $generic-bg: #db4c3f;
   cursor: pointer;
 
   &:hover {
-    background-color: #f9f9f9;
+    background-color: $hover-bcg-item;
   }
 }
 
@@ -225,11 +225,26 @@ header {
           &.settings__add {
             margin-right: 15px;
             font-size: 30px;
+
+            button {
+              @include transparent-button();
+              color: white;
+              cursor: pointer;
+            }
           }
 
-          &.settings__darkmode svg {
-            width: 20px;
-            height: 20px;
+          &.settings__darkmode {
+            button {
+              @include transparent-button();
+              color: white;
+              cursor: pointer;
+              display: flex;
+            }
+
+            svg {
+              width: 20px;
+              height: 20px;
+            }
           }
         }
       }
@@ -267,6 +282,12 @@ header {
 
   &__project {
     cursor: pointer;
+
+    div:nth-child(1) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
 
     &-delete {
       margin-left: auto;
@@ -312,7 +333,11 @@ header {
 
   &__project {
     @include va('left');
-    padding: 10px 0 10px 15px;
+    padding: 10px 10px 10px 15px;
+
+    &:hover {
+      background-color: $hover-bcg-item;
+    }
   }
 
   &__dot {
@@ -336,12 +361,7 @@ header {
       position: relative;
       color: #0000008a;
       padding: 10px;
-
-      svg {
-        position: absolute;
-        top: 3px;
-        left: 0;
-      }
+      display: flex;
 
       svg.hidden-projects {
         -webkit-transform: rotate(-90deg);
@@ -350,9 +370,9 @@ header {
     }
 
     h2 {
-      margin: 0 0 0 10px;
+      margin-left: 0px;
       color: #333;
-      font-size: 15px;
+      font-size: 18px;
       font-weight: bold;
     }
   }
@@ -396,10 +416,12 @@ header {
         }
       }
 
-      &.active,
-      &:hover {
+      &.active {
         font-weight: bold;
-        background-color: white;
+      }
+
+      &:hover {
+        background-color: $hover-bcg-item;
       }
     }
   }
@@ -650,6 +672,7 @@ header {
 
     span {
       padding-right: 10px;
+      display: flex;
 
       svg {
         fill: grey;
@@ -665,7 +688,6 @@ header {
       -webkit-box-align: center;
       -ms-flex-align: center;
       align-items: center;
-
     }
   }
 }
@@ -690,6 +712,11 @@ header {
     div:nth-child(1) {
       width: 100%;
       padding: 10px;
+    }
+
+    &:hover {
+      font-weight: bold;
+      background-color: $hover-bcg-item;
     }
   }
 }

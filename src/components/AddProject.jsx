@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import uniqid from 'uniqid';
 import { firebase } from '../firebase';
@@ -55,6 +52,9 @@ export const AddProject = ({ shouldShow = false }) => {
             data-testid="hide-project-overlay"
             className="add-project__cancel"
             onClick={() => setShow(false)}
+            onKeyDown={() => setShow(false)}
+            role="button"
+            tabIndex={0}
           >
             Cancel
           </span>
@@ -67,6 +67,9 @@ export const AddProject = ({ shouldShow = false }) => {
         onClick={() => {
           setShow(!show);
         }}
+        onKeyDown={() => setShow(!show)}
+        role="button"
+        tabIndex={0}
       >
         Add project
       </span>

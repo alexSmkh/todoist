@@ -1,7 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import {
   FaChevronDown,
@@ -22,30 +18,38 @@ export const Sidebar = () => {
   return (
     <div className="sidebar" data-testid="sidebar">
       <ul className="sidebar__generic">
-        <li
-          className={active === 'inbox' ? 'active' : ''}
-          data-testid="inbox"
-          onClick={() => {
-            setActive('inbox');
-            setSelectedProject('INBOX');
-          }}
-        >
-          <div>
+        <li className={active === 'inbox' ? 'active' : ''} data-testid="inbox">
+          <div
+            onClick={() => {
+              setActive('inbox');
+              setSelectedProject('INBOX');
+            }}
+            onKeyDown={() => {
+              setActive('inbox');
+              setSelectedProject('INBOX');
+            }}
+            tabIndex={0}
+            role="button"
+          >
             <span>
               <FaInbox />
             </span>
             <span>Inbox</span>
           </div>
         </li>
-        <li
-          className={active === 'today' ? 'active' : ''}
-          data-testid="today"
-          onClick={() => {
-            setActive('today');
-            setSelectedProject('TODAY');
-          }}
-        >
-          <div>
+        <li className={active === 'today' ? 'active' : ''} data-testid="today">
+          <div
+            onClick={() => {
+              setActive('today');
+              setSelectedProject('TODAY');
+            }}
+            onKeyDown={() => {
+              setActive('today');
+              setSelectedProject('TODAY');
+            }}
+            tabIndex={0}
+            role="button"
+          >
             <span>
               <FaCalendarDay />
             </span>
@@ -55,12 +59,19 @@ export const Sidebar = () => {
         <li
           className={active === 'next_7' ? 'active' : ''}
           data-testid="next_7"
-          onClick={() => {
-            setActive('next_7');
-            setSelectedProject('NEXT_7');
-          }}
         >
-          <div>
+          <div
+            onClick={() => {
+              setActive('next_7');
+              setSelectedProject('NEXT_7');
+            }}
+            onKeyDown={() => {
+              setActive('next_7');
+              setSelectedProject('NEXT_7');
+            }}
+            tabIndex={0}
+            role="button"
+          >
             <span>
               <FaCalendarWeek />
             </span>
@@ -72,9 +83,12 @@ export const Sidebar = () => {
       <div
         className="sidebar__middle"
         onClick={() => setShowProjects(!showProjects)}
+        onKeyDown={() => setShowProjects(!showProjects)}
+        tabIndex={0}
+        role="button"
       >
         <span>
-          <FaChevronDown className={!showProjects ? 'hidden-project' : ''} />
+          <FaChevronDown className={!showProjects ? 'hidden-projects' : ''} />
         </span>
         <h2>Projects</h2>
       </div>

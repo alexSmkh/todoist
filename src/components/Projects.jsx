@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useState } from 'react';
 import { useProjectsValue, useSelectedProjectValue } from '../context';
 import { IndividualProject } from './IndividualProject';
@@ -26,9 +24,15 @@ export const Projects = ({ activeValue = null }) => {
             ? 'active sidebar__project'
             : 'sidebar__project'
         }
-        onClick={() => clickHandler(project.projectId)}
       >
-        <IndividualProject project={project} />
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={() => clickHandler(project.projectId)}
+          onKeyDown={() => clickHandler(project.projectId)}
+        >
+          <IndividualProject project={project} />
+        </div>
       </li>
     ))
   );
