@@ -12,7 +12,7 @@ export const AddProject = ({ shouldShow = false }) => {
   const [projectName, setProjectName] = useState('');
 
   const projectId = uniqid();
-  const { setProjects } = useProjectsValue();
+  const { projects, setProjects } = useProjectsValue();
 
   const addProject = () => {
     if (projectName) {
@@ -25,7 +25,7 @@ export const AddProject = ({ shouldShow = false }) => {
           userId: USER_ID,
         })
         .then(() => {
-          setProjects([]);
+          setProjects([...projects]);
           setProjectName('');
           setShow(false);
         });

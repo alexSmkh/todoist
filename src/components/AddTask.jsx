@@ -52,6 +52,7 @@ export const AddTask = ({
           setProject('');
           setShowMain('');
           setShowProjectOverlay(false);
+          setShowQuickAddTask(false);
         })
     );
   };
@@ -113,7 +114,9 @@ export const AddTask = ({
             type="button"
             className="add-task__submit"
             data-testid="add-task"
-            onClick={() => addTask(task)}
+            onClick={() => {
+              addTask(task);
+            }}
           >
             Add Task
           </button>

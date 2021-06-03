@@ -257,7 +257,8 @@ header {
   }
 
   li {
-    &:hover .sidebar__project-delete, .sidebar__project-delete.active {
+    &:hover .sidebar__project-delete,
+    .sidebar__project-delete.active {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -527,9 +528,10 @@ header {
 /*
   Add task
 */
+
 .add-task {
   &__overlay {
-    background: rgba(102,102,102,0.5);
+    background: rgba(102, 102, 102, 0.5);
     position: absolute;
     margin: auto;
     top: 0;
@@ -556,7 +558,7 @@ header {
       top: 50%;
       padding: 20px 30px;
       -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
 
       .header {
         font-size: 13px;
@@ -579,7 +581,8 @@ header {
     position: relative;
   }
 
-  &__project, &__date {
+  &__project,
+  &__date {
     cursor: pointer;
     float: right;
     color: gray;
@@ -600,7 +603,8 @@ header {
     padding-right: 10px;
   }
 
-  &__cancel, &__submit {
+  &__cancel,
+  &__submit {
     @include no-select;
   }
 
@@ -613,19 +617,21 @@ header {
   }
 }
 
-.add-task__shallow, .add-project {
+.add-task__shallow,
+.add-project {
   @include no-select;
   cursor: pointer;
   margin-bottom: 20px;
 }
 
-.add-task__plus, .add-project__plus {
+.add-task__plus,
+.add-project__plus {
   color: #dd4b39;
   font-size: 18px;
-
 }
 
-.add-task__text, .add-project__text {
+.add-task__text,
+.add-project__text {
   display: inline-block;
   color: #545454;
   font-size: 14px;
@@ -646,6 +652,14 @@ header {
     @include task-item();
     padding: 10px;
 
+    span {
+      padding-right: 10px;
+
+      svg {
+        fill: grey;
+      }
+    }
+
     div:nth-child(1) {
       padding: 10px;
       width: 100%;
@@ -653,16 +667,9 @@ header {
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
 
-      span:first-of-type {
-        margin-right: 10px;
-
-        svg {
-          fill: grey;
-        }
-      }
     }
   }
 }
@@ -695,7 +702,7 @@ header {
   Add project
 */
 
-.add-project  {
+.add-project {
   padding-left: 13px;
   padding-right: 20px;
   margin-top: 20px;
