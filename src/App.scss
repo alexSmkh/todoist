@@ -310,13 +310,9 @@ header {
     }
   }
 
-  &__projects {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   &__project {
     @include va('left');
+    padding: 10px 0 10px 15px;
   }
 
   &__dot {
