@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { API_KEY } from './constants/index';
+import { API_KEY } from './constants';
 
-const firebaseConfig = firebase.initializeApp({
+export const firebaseConfig = firebase.initializeApp({
   API_KEY,
   authDomain: 'todoist-6ce26.firebaseapp.com',
   databaseURL:
